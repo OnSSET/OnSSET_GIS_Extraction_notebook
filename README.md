@@ -1,16 +1,11 @@
 # OnSSET GIS extraction
 
-**Note** this notebook is still being tested
-
 Jupyter notebook facilitated for extracting GIS data and generating the input file necessary for OnSSET. The notebook can be utilized when generating an OnSSET input file from scratch or when the user wants to change one specific dataset in an existing OnSSET-input file. The mandatory datasets are \n:
 * Administrative boundaries
-* Land Cover
-* Elevation
-* Slope
 * Global horizontal irradiation
 * Travel time
 * Wind velocity
-* Clusters (**Note** The clusters have to include the name of the study area, the amount of nighttime lights, population, population living in areas with nighttime light and an ID column)
+* Clusters (**Note** The clusters have to include the name of the study area, population, and an ID column)
 
 Optional datasets that can be used for the extraction are: 
 
@@ -20,13 +15,14 @@ Optional datasets that can be used for the extraction are:
 * Mini/Small hydro
 * Existing and planned HV-lines
 * Existing and planned MV-lines
+* Existing mini-grid locations
 * Road network
 
 The output is in the form of a CSV file that can be directly put into OnSSET.
 
 ## Content
 This repository contains:
-* An environment .yml file needed for generating a fully functioning python 3.7 environment necessary for the clustering algorithm.
+* An environment .yml file needed for generating a fully functioning python 3.12 environment necessary for the clustering algorithm.
 * The clustering code and related functions. These files also have instructions for how to run the code
 * An example case for Benin containing inputs and outputs
 
@@ -49,16 +45,16 @@ Once installed, open anaconda prompt and move to your local "OnSSET-GIS-Extracti
 > cd ..\OnSSET-GIS-Extraction
 ```
 
-In order to be able to run the tool (main.ipynb and funcs.ipynb) you have to install all necessary packages. "full_project.yml" contains all of these and can be easily set up by creating a new virtual environment using:
+In order to be able to run the tool (main.ipynb and funcs.ipynb) you have to install all necessary packages. "onsset_env.yml" contains all of these and can be easily set up by creating a new virtual environment using:
 
 ```
-conda env create --name OnSSET_extraction --file full_project.yml
+conda env create --name OnSSET --file onsset_env.yml
 ```
 
 This might take some time. When complete, activate the virtual environment using:
 
 ```
-conda activate OnSSET_extraction
+conda activate OnSSET
 ```
 
 With the environment activated, you can now move to the extraction directory and start a "jupyter notebook" session by simply typing:
@@ -68,4 +64,5 @@ With the environment activated, you can now move to the extraction directory and
 ```
 ## Changelog
 **21-Februray-2021**: Original code base published
+**3-September-2025**: Major update to user-friendliness and processing speed
 
