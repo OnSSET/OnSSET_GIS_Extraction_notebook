@@ -8,3 +8,4 @@
 *.qpj
 *.xml
 *.csv
+/.ipynb_checkpoints
